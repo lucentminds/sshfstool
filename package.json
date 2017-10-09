@@ -1,0 +1,51 @@
+{
+  "name": "sshfstool",
+  "date": "10-09-2017",
+  "description": "Handy tool kit for use with [sshfs](https://github.com/libfuse/sshfs).",
+  "main": "bin/sshfstool.js",
+  "author": {
+    "name": "Scott Johnson"
+  },
+  "license": "UNLICENSED",
+  "version": "0.0.1",
+  "engines": {
+    "node": ">=4.0.0"
+  },
+  "scripts": {
+    "test": "echo \"***This happens after install\" && echo \"***So does this\"",
+    "build": "node scripts/build.js",
+    "watch": "node scripts/watch.js",
+    "deploy": "node scripts/deploy.js"
+  },
+  "bin_desc": "Determines the command that will be globally available : Determines the script that will act as the global app.",
+  "bin": {
+    "sshfstool": "bin/sshfstool.js"
+  },
+  "keywords": [],
+  "files": [
+    "bin",
+    "config-example.json"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lucentminds/sshfstool.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lucentminds/sshfstool/issues"
+  },
+  "homepage": "https://github.com/lucentminds/sshfstool#readme",
+  "devDependencies": {
+    "promise-empty-dir": "git+https://github.com/lucentminds/promise-empty-dir.git",
+    "promise-file-concat": "git+https://github.com/lucentminds/promise-file-concat.git",
+    "promise-file-copy": "git+https://github.com/lucentminds/promise-file-copy.git",
+    "promise-file-replace": "git+https://github.com/lucentminds/promise-file-replace.git",
+    "promise-resolve-path": "git+https://github.com/lucentminds/promise-resolve-path.git",
+    "promise-file-uglify": "git+https://github.com/lucentminds/promise-file-uglify.git",
+    "promise-file-jsify": "git+https://github.com/lucentminds/promise-file-jsify.git"
+  },
+  "dependencies": {
+    "builder-bob": "git+https://github.com/lucentminds/builder-bob.git",
+    "minimist": "^1.2.0",
+    "q": "^1.4.1"
+  }
+}
