@@ -21,12 +21,9 @@ const ARGS = require( APP_ROOT+'/lib/args' );
 const help = require( APP_ROOT+'/lib/help' );
 const storage = require( APP_ROOT+'/lib/storage' );
 const COMMAND = ARGS._[ 2 ];
+const PROFILE = ARGS._[ 3 ];
 var CONFIG = null;
 var COMMANDS = 'mount unmount add update remove';
-
-
-   console.log( ARGS );
-   process.exit();
 
 if( ARGS.debug ) {
    console.log( ARGS );
@@ -56,7 +53,7 @@ storage.get()
 
    switch( COMMAND ) {
    case 'mount':
-      require( APP_ROOT+'/lib/command_mount' )();
+      require( APP_ROOT+'/lib/command_mount' )( PROFILE );
       break;
   
    case 'list':
@@ -69,6 +66,10 @@ storage.get()
 
    case 'add':
       require( APP_ROOT+'/lib/command_add' )();
+      break;
+
+   case 'update':
+      require( APP_ROOT+'/lib/command_update' )();
       break;
 
    case 'remove':

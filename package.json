@@ -24,7 +24,8 @@
   "keywords": [],
   "files": [
     "bin",
-    "config-example.json"
+    "docs/help",
+    "lib"
   ],
   "repository": {
     "type": "git",
