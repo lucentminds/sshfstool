@@ -9,7 +9,7 @@
   "license": "UNLICENSED",
   "version": "0.0.1",
   "engines": {
-    "node": ">=4.0.0"
+    "node": "^6.0.0"
   },
   "scripts": {
     "test": "echo \"***This happens after install\" && echo \"***So does this\"",

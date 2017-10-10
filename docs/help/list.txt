@@ -1,0 +1,3 @@
+sshfstool list shows a list of existing connection profiles.
+
+useage: sshfstool list

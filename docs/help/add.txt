@@ -1,7 +1,15 @@
 sshfstool add creates a new connection profile used for connecting to an ssh server.
 
-useage: sshfstool add PROFILE [options]
+useage: sshfstool add [options]
+
+example: sshfstool add -n example -h example.com -l ~/mnt/example_www
+
+Required options:
+   -n    --name      Name of the new profile.
+   -h    --host      Remote host/ip address.
+   -l    --local     Local path to mount to.
 
 options:
-   -h    --help      print help
+   -p    --port      Remote host port.
+   -r    --remote    Remote path to mount to.
    

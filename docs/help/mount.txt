@@ -1,7 +1,3 @@
 sshfstool mount creates a new connection to an existing profile.
 
-useage: sshfstool [options] mount PROFILE
-
-options:
-   -h    --help      print help
-   
+useage: sshfstool mount PROFILE

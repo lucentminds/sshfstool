@@ -1,0 +1,8 @@
+sshfstool remove deletes an existing connection profile.
+
+useage: sshfstool remove [options]
+
+example: sshfstool remove -n example
+
+Required options:
+   -n    --name      Name of the profile to remove.

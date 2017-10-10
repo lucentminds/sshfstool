@@ -15,14 +15,25 @@
 //var Q = require( 'q' );
 //var deferred = Q.defer();
 //var Module = module.exports = {};
-const parseArgs = require( 'minimist' );
-const ARGS = parseArgs( process.argv );
 const path = require( 'path' );
 const APP_ROOT = path.resolve( __dirname, '..' );
+const ARGS = require( APP_ROOT+'/lib/args' );
 const help = require( APP_ROOT+'/lib/help' );
-console.log( ARGS );
+const storage = require( APP_ROOT+'/lib/storage' );
+const COMMAND = ARGS._[ 2 ];
+var CONFIG = null;
+var COMMANDS = 'mount unmount add update remove';
 
-if( ARGS.h || ARGS.help ) {
+
+   console.log( ARGS );
+   process.exit();
+
+if( ARGS.debug ) {
+   console.log( ARGS );
+}
+//console.log( '\nCOMMAND', COMMAND, '\n' );
+
+if( ( ARGS.h || ARGS.help ) && COMMANDS.indexOf( COMMAND ) == -1 ) {
    (function(){
       var helpSubject, cHelpText;
    
@@ -32,11 +43,40 @@ if( ARGS.h || ARGS.help ) {
       }
 
       cHelpText = help.load( helpSubject );
-      console.log( cHelpText );
+      process.stdout.write( cHelpText+'\n' );
       process.exit( 0 );
    
    }());
 
-}
+}// /if()
 
-console.log( 'Hello, World!' );
+storage.get()
+.then(function( oConfig ){
+   CONFIG = oConfig;
+
+   switch( COMMAND ) {
+   case 'mount':
+      require( APP_ROOT+'/lib/command_mount' )();
+      break;
+  
+   case 'list':
+      require( APP_ROOT+'/lib/command_list' )();
+      break;
+
+   case 'info':
+      require( APP_ROOT+'/lib/command_info' )();
+      break;
+
+   case 'add':
+      require( APP_ROOT+'/lib/command_add' )();
+      break;
+
+   case 'remove':
+      require( APP_ROOT+'/lib/command_remove' )();
+      break;
+
+   default:
+      console.log( 'Invalid command:', COMMAND );
+      process.exit( 1 );
+   }// /switch()
+});

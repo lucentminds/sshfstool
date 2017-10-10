@@ -6,6 +6,8 @@ commands:
 
 mount    Mount an existing sshfstool profile.
 unmount  Unmount an existing sshfstool profile or all.
+list     List existing profiles.
+info     Output details on a specific profile.
 add      Add a new mount profile.
 update   Update an existing mount profile.
 remove   Remove an existing mount profile.
