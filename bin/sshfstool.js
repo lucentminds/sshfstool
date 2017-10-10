@@ -17,39 +17,26 @@
 //var Module = module.exports = {};
 const parseArgs = require( 'minimist' );
 const ARGS = parseArgs( process.argv );
-const fs = require( 'fs' );
 const path = require( 'path' );
 const APP_ROOT = path.resolve( __dirname, '..' );
-const DIR_HELP = APP_ROOT+'/docs/help';
+const help = require( APP_ROOT+'/lib/help' );
 console.log( ARGS );
 
-(function(){
-   var helpSubject, cHelpText;
+if( ARGS.h || ARGS.help ) {
+   (function(){
+      var helpSubject, cHelpText;
+   
+      helpSubject = ARGS.h || ARGS.help;
+      if( !helpSubject ){
+         return;
+      }
 
-   helpSubject = ARGS.h || ARGS.help;
-   if( !helpSubject ){
-      return;
-   }
-   if( helpSubject === true ){
-      helpSubject = 'index';
-   }
+      cHelpText = help.load( helpSubject );
+      console.log( cHelpText );
+      process.exit( 0 );
+   
+   }());
 
-   cHelpText = loadHelp( helpSubject );
-   console.log( cHelpText );
-   process.exit( 0 );
-
-}());
-
-function loadHelp( cHelpName ) {
-   var cHelpText;
-   try {
-      cHelpText = fs.readFileSync( `${DIR_HELP}/${cHelpName}.txt`, {encoding:'utf8'} );
-   }
-   catch( e ){
-      cHelpText = `Cannot load help text for "${cHelpName}"`;
-   }
-
-   return cHelpText;
-}// /loadHelp()
+}
 
 console.log( 'Hello, World!' );

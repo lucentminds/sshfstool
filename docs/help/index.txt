@@ -4,10 +4,11 @@ useage: sshfstool [options] COMMAND
 
 commands:
 
-mount    Mount an existing sshfstool entry.
-unmount  Unmount an existing sshfstool entry or all.
-add      Add a new mount configuration.
-remove   Remove an existing mount configuration.
+mount    Mount an existing sshfstool profile.
+unmount  Unmount an existing sshfstool profile or all.
+add      Add a new mount profile.
+update   Update an existing mount profile.
+remove   Remove an existing mount profile.
 
 options:
    -h    --help      print help

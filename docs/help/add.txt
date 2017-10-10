@@ -1,0 +1,7 @@
+sshfstool add creates a new connection profile used for connecting to an ssh server.
+
+useage: sshfstool add PROFILE [options]
+
+options:
+   -h    --help      print help
+   
