@@ -14,4 +14,3 @@ remove   Remove an existing mount profile.
 
 options:
    -h    --help      print help
-   

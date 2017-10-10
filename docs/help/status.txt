@@ -1,0 +1,3 @@
+sshfstool status shows a list of existing connections.
+
+useage: sshfstool status

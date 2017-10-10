@@ -51,13 +51,26 @@ storage.get()
 .then(function( oConfig ){
    CONFIG = oConfig;
 
+   if( !COMMAND ) {
+      process.stderr.write( help.load( 'index' )+'\n' );
+      process.exit( 1 );    
+   }
+
    switch( COMMAND ) {
    case 'mount':
       require( APP_ROOT+'/lib/command_mount' )( PROFILE );
       break;
+
+   case 'umount':
+      require( APP_ROOT+'/lib/command_umount' )( PROFILE );
+      break;
   
    case 'list':
       require( APP_ROOT+'/lib/command_list' )();
+      break;
+  
+   case 'status':
+      require( APP_ROOT+'/lib/command_status' )();
       break;
 
    case 'info':
@@ -77,7 +90,7 @@ storage.get()
       break;
 
    default:
-      console.log( 'Invalid command:', COMMAND );
+      process.stderr.write( `Invalid command: ${COMMAND}\n` );
       process.exit( 1 );
    }// /switch()
 });
