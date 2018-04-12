@@ -13,4 +13,4 @@ update   Update an existing mount profile.
 remove   Remove an existing mount profile.
 
 options:
-   -h    --help      print help
+-h    --help      print help

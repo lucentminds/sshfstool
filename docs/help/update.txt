@@ -5,9 +5,9 @@ useage: sshfstool update [options]
 example: sshfstool update -n example -l ~/mnt/another/path
 
 options:
-   -n    --name      Name of the new profile.
-   -u    --user      Remote username.
-   -h    --host      Remote host/ip address.
-   -l    --local     Local path to mount to.
-   -p    --port      Remote host port.
-   -r    --remote    Remote path to mount to.
+-n    --name      Name of the new profile.
+-u    --user      Remote username.
+-h    --host      Remote host/ip address.
+-l    --local     Local path to mount to.
+-p    --port      Remote host port.
+-r    --remote    Remote path to mount to.
